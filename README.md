@@ -37,9 +37,7 @@ MySQL Database (logs every prediction)
 
 ```
 fake-news-detector/
-├── data/
-│   ├── Fake.csv
-│   └── True.csv
+├── data/                  ← Fake.csv & True.csv NOT included — download separately (see Setup)
 ├── ml/
 │   ├── train_model.ipynb
 │   ├── model.pkl
@@ -85,7 +83,20 @@ pip install pandas scikit-learn numpy joblib jupyter fastapi uvicorn streamlit s
 
 ### 3. Download the dataset
 
-Get **Fake.csv** and **True.csv** from the [ISOT Fake and Real News Dataset on Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset) and place both files in the `data/` folder.
+> ⚠️ **The dataset is NOT included in this repository.** Due to file size limits on GitHub, `Fake.csv` and `True.csv` must be downloaded manually before training the model.
+
+1. Go to the [ISOT Fake and Real News Dataset on Kaggle](https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset)
+2. Download `Fake.csv` and `True.csv`
+3. Place both files inside the `data/` folder in the project root, so it looks like:
+
+```
+fake-news-detector/
+└── data/
+    ├── Fake.csv
+    └── True.csv
+```
+
+The `ml/train_model.ipynb` notebook (Step 5 below) will not run without these files present.
 
 ### 4. Set up MySQL
 
